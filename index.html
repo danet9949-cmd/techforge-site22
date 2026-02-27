@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechForge | Digital Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Стили для углового логотипа */
+        .corner-logo {
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 100;
+        }
+        .logo-svg-small {
+            width: 40px;
+            height: 40px;
+            filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
+        }
+        .logo-text-small {
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 1.1rem;
+            color: white;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Название услуги</h2>
+            <div id="loader-container" class="loader-box">
+                <div class="spinner"></div>
+                <p id="loading-text">Инициализация запроса...</p>
+            </div>
+            <div id="contact-form-container" style="display: none;">
+                <div class="success-icon">✓</div>
+                <p class="success-msg">Специалисты найдены!</p>
+                <p id="form-instruction" style="color: #94a3b8; font-size: 0.9rem;">Оставьте номер телефона, наш менеджер перезвонит для уточнения деталей.</p>
+                <input type="tel" id="user-phone" value="+380" maxlength="13" class="phone-input" autocomplete="off">
+                <button class="cta-button-send" id="submit-btn" onclick="sendOrder()">Жду звонка</button>
+                <div id="final-thanks" style="display: none;">
+                    <p style="font-size: 50px; margin: 20px 0;">🚀</p>
+                    <h3 style="color: #4ade80; margin-bottom: 10px;">Заявка принята!</h3>
+                    <p id="thanks-text" style="color: #94a3b8; font-size: 0.9rem; line-height: 1.5;"></p>
+                    <button class="cta-button-send" style="margin-top: 20px;" onclick="closeAfterAll()">Понятно</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-viewport">
+        <div class="glass-hero">
+            <div class="corner-logo">
+                <svg viewBox="0 0 100 100" class="logo-svg-small" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 5 L90 27.5 L90 72.5 L50 95 L10 72.5 L10 27.5 Z" stroke="white" stroke-width="5" fill="none" />
+                    <path d="M40 35 H65 M40 50 H60 M40 35 V70" stroke="#38bdf8" stroke-width="8" stroke-linecap="round" fill="none" />
+                </svg>
+                <span class="logo-text-small">TechForge</span>
+            </div>
+
+            <div class="sticks" id="sticks-container"></div>
+
+            <div class="hero-content">
+                <h1>TechForge</h1>
+                <p>Создаём цифровые решения. Просто. Быстро. Надёжно.</p>
+                <nav class="hero-nav">
+                    <a href="#about">О нас</a>
+                    <a href="#services">Услуги</a>
+                    <a href="#team">Команда</a>
+                    <a href="#contact">Контакты</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <section id="about">
+            <h2>О компании</h2>
+            <p class="section-text">
+                TechForge — студия цифровых услуг для людей и бизнеса. 
+                Мы превращаем сложные технические задачи в элегантные и понятные решения.
+            </p>
+        </section>
+
+        <section id="stats" class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon-svg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h2 class="stat-number" data-target="150">0</h2>
+                    <p>Успешных проектов</p>
+                </div>
+        
+                <div class="stat-item">
+                    <div class="stat-icon-svg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h2 class="stat-number" data-target="98">0</h2>
+                    <p>% Довольных клиентов</p>
+                </div>
+        
+                <div class="stat-item">
+                    <div class="stat-icon-svg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2m8-10a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h2 class="stat-number" data-target="12">0</h2>
+                    <p>IT-специалистов</p>
+                </div>
+        
+                <div class="stat-item">
+                    <div class="stat-icon-svg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h2 class="stat-number" data-target="5">0</h2>
+                    <p>Лет опыта</p>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section id="services">
+            <h2>Наши услуги</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Веб-разработка</h3>
+                    <p>Современные сайты и лендинги с высокой конверсией.</p>
+                </div>
+                <div class="service-card">
+                    <h3>IT-Поддержка</h3>
+                    <p>Дистанционная настройка ПО и оптимизация ваших устройств.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Консалтинг</h3>
+                    <p>Помогаем бизнесу найти правильные инструменты для роста.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="team">
+            <h2>Наши коллеги</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar-rect">
+                        <img src="colega1.jpg" alt="Егор" onerror="this.src='https://via.placeholder.com/240x300/1e293b/38bdf8?text=Егор'">
+                    </div>
+                    <h3>Егор</h3>
+                    <span class="role">Lead Developer</span>
+                    <p class="team-desc">Архитектор систем и эксперт по безопасности данных.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar-rect">
+                        <img src="colega2.jpg" alt="Ярема" onerror="this.src='https://via.placeholder.com/240x300/1e293b/38bdf8?text=Ярема'">
+                    </div>
+                    <h3>Ярема</h3>
+                    <span class="role">UI/UX Designer</span>
+                    <p class="team-desc">Создает интерфейсы, которые интуитивно понятны каждому.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-contact">
+                <p>Email: <span>contact@techforge.pro</span></p>
+                <p>Telegram: <span>@techforge</span></p>
+            </div>
+            <div class="footer-bottom">
+                <span class="neon-stich"></span>
+                <p class="copy">© 2026 TechForge | Все права защищены</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+// Твой JS остается без изменений, всё настроено на отправку
+const container = document.getElementById('sticks-container');
+const totalEntities = 90;
+for (let i = 0; i < totalEntities; i++) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'stick-wrapper';
+    const isGroup = Math.random() > 0.6;
+    const sticksInGroup = isGroup ? Math.floor(Math.random() * 3) + 2 : 1;
+    for (let j = 0; j < sticksInGroup; j++) {
+        const span = document.createElement('span');
+        if (isGroup) {
+            const rotX = Math.random() * 360;
+            const rotY = Math.random() * 360;
+            span.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+        }
+        span.style.height = `${Math.random() * 60 + 30}px`;
+        wrapper.appendChild(span);
+    }
+    wrapper.style.left = `${Math.random() * 100}%`;
+    wrapper.style.top = `${Math.random() * 100}%`;
+    wrapper.style.animationDelay = `-${Math.random() * 25}s`;
+    wrapper.style.animationDuration = `${Math.random() * 15 + 15}s`;
+    container.appendChild(wrapper);
+}
+
+const modal = document.getElementById('service-modal');
+const loadingText = document.getElementById('loading-text');
+const loaderContainer = document.getElementById('loader-container');
+const formContainer = document.getElementById('contact-form-container');
+const finalThanks = document.getElementById('final-thanks');
+const closeModal = document.querySelector('.close-modal');
+const phoneInput = document.getElementById('user-phone');
+
+const phrases = ["Анализируем запрос...", "Готовим тех. задание...", "Ищем свободных сотрудников...", "Проверка Lead-разработчика...", "Специалисты найдены!"];
+
+function startServiceProcess(serviceName) {
+    document.getElementById('modal-title').innerText = serviceName;
+    modal.classList.add('active');
+    modal.style.display = 'flex';
+    loaderContainer.style.display = 'block';
+    formContainer.style.display = 'none';
+    finalThanks.style.display = 'none';
+    phoneInput.style.display = 'block';
+    document.getElementById('submit-btn').style.display = 'block';
+    document.querySelector('.success-icon').style.display = 'block';
+    document.querySelector('.success-msg').style.display = 'block';
+    document.getElementById('form-instruction').style.display = 'block';
+    phoneInput.value = '+380';
+    let i = 0;
+    loadingText.innerText = phrases[0];
+    const interval = setInterval(() => {
+        i++;
+        if (i < phrases.length) { loadingText.innerText = phrases[i]; } 
+        else { clearInterval(interval); loaderContainer.style.display = 'none'; formContainer.style.display = 'block'; }
+    }, 1100);
+}
+
+document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const title = card.querySelector('h3').innerText;
+        startServiceProcess(title);
+    });
+});
+
+closeModal.onclick = () => { modal.style.display = 'none'; };
+window.onclick = (e) => { if(e.target == modal) modal.style.display = 'none'; };
+
+phoneInput.oninput = function() {
+    if (!this.value.startsWith('+380')) this.value = '+380';
+    this.value = '+' + this.value.replace(/[^\d]/g, '');
+    if (this.value.length > 13) this.value = this.value.slice(0, 13);
+};
+
+function sendOrder() {
+    const phoneValue = phoneInput.value;
+    const serviceName = document.getElementById('modal-title').innerText;
+    if(phoneValue.length === 13) {
+        const botToken = '8595887030:AAFY216821_Ax5tg9rYwUbkZon_BXCZj5ig'; 
+        const chatId = '1362676800';      
+        const message = `🚀 Новая заявка!\n\n🔥 Услуга: ${serviceName}\n📞 Номер: ${phoneValue}`;
+        fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id: chatId, text: message })
+        });
+        phoneInput.style.display = 'none';
+        document.getElementById('submit-btn').style.display = 'none';
+        document.querySelector('.success-icon').style.display = 'none';
+        document.querySelector('.success-msg').style.display = 'none';
+        document.getElementById('form-instruction').style.display = 'none';
+        finalThanks.style.display = 'block';
+        document.getElementById('thanks-text').innerText = "Специалист TechForge свяжется с вами по номеру " + phoneValue + " в ближайшее время.";
+    } else {
+        phoneInput.style.borderColor = "#f43f5e";
+        setTimeout(() => { phoneInput.style.borderColor = ""; }, 1000);
+    }
+}
+
+function closeAfterAll() { modal.style.display = 'none'; }
+    // Анимация цифр статистики
+const stats = document.querySelectorAll('.stat-number');
+const speed = 200;
+
+const animateStats = () => {
+    stats.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const inc = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(updateCount, 1);
+            } else {
+                counter.innerText = target + (counter.getAttribute('data-target') === "150" ? "+" : "");
+            }
+        };
+        updateCount();
+    });
+};
+
+// Запуск анимации при скролле (когда блок виден)
+const observer = new IntersectionObserver((entries) => {
+    if(entries[0].isIntersecting) {
+        animateStats();
+        observer.disconnect(); // Запускаем только один раз
+    }
+}, { threshold: 0.5 });
+
+observer.observe(document.querySelector('.stats-section'));
+function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150; // Высота, при которой блок начинает проявляться
+        
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+        }
+    }
+}
+
+window.addEventListener("scroll", reveal);
+
+// Запускаем один раз при загрузке, чтобы проверить первый экран
+reveal();
+    </script>
+</body>
+</html>
