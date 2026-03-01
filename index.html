@@ -29,6 +29,11 @@
             color: white;
             text-transform: uppercase;
         }
+        
+        /* Добавил маааленький стиль, чтобы на секции инвестора курсор не менялся на палец */
+        #why-us .service-card {
+            cursor: default;
+        }
     </style>
 </head>
 <body>
@@ -73,10 +78,11 @@
 
             <div class="hero-content">
                 <h1>TechForge</h1>
-                <p>Creating digital solutions. Simple. Fast. Reliable.</p>
+                <p>A smart investment in IT. Simple. Fast. Profitable.</p>
                 <nav class="hero-nav">
                     <a href="#about">About Us</a>
                     <a href="#team">Team</a>
+                    <a href="#why-us">Invest in Us</a>
                     <a href="#contact">Contact</a>
                 </nav>
             </div>
@@ -88,22 +94,22 @@
             <div class="glass-card-about">
                 <div class="about-content-wrapper">
                     <div class="about-info">
-                        <h2 class="section-title-left">What does Forge do?</h2>
+                        <h2 class="section-title-left">Why invest in Forge?</h2>
                         <p class="main-description">
-                            Simply put: we take your business ideas and turn them into <span class="highlight">real working code</span>. We build everything from simple pages to huge systems.
+                            Simply put: we take ideas and turn them into <span class="highlight">real profit</span>. We build everything from simple pages to huge business systems.
                         </p>
                         <p style="color: #94a3b8; line-height: 1.6; font-size: 0.95rem; margin-bottom: 20px;">
-                            We mostly work on the "brains" of the internet. For example, if you need an online shop that stays fast even when 1,000 people use it at once  we make that. If you need a private system to track your company's orders or help your team work faster  we build that too. We don't just make it look pretty; we make sure it never crashes and works perfectly on every phone or laptop.
+                            As an investor, you want a business that grows. We make online shops and private company systems. If a shop has 1,000 users at once, our code keeps it working perfectly. We don't just make things look pretty; we solve real business problems. This makes us a safe and very smart choice for your investment.
                         </p>
                         
                         <div class="about-features">
                             <div class="feature-item">
-                                <h4>Our Philosophy</h4>
-                                <p>We believe that tech should be simple and helpful. We don't just write code; we solve problems so you can grow your business without stress.</p>
+                                <h4>Our Business Model</h4>
+                                <p>We believe that tech should bring money. We create products that help our clients grow their businesses, which brings stable income to us and our investors.</p>
                             </div>
                             <div class="feature-item">
-                                <h4>Work Across Ukraine</h4>
-                                <p>Our team is fully remote and we work with clients from <span style="color: #38bdf8;">Kyiv, Lviv, Odesa, Kharkiv</span>, and every other city in Ukraine.</p>
+                                <h4>Huge Market</h4>
+                                <p>Our team is remote. We work with clients from <span style="color: #38bdf8;">Kyiv, Lviv, Odesa, Kharkiv</span>, and the whole world. The IT market never stops growing.</p>
                             </div>
                         </div>
                     </div>
@@ -113,11 +119,11 @@
                             <div class="scan-line"></div>
                             <div class="tech-label">UKRAINE_CONNECT_v1</div>
                             <div style="padding: 40px; color: #38bdf8; font-family: monospace; font-size: 11px; line-height: 1.6;">
-                                > MISSION: SOLVING_PROBLEMS<br>
-                                > REGION: UKRAINE_WIDE<br>
+                                > MISSION: HIGH_PROFIT<br>
+                                > REGION: GLOBAL_MARKET<br>
                                 > STACK: MODERN_TOOLS<br>
-                                > CLIENTS: HAPPY<br>
-                                > STATUS: <span style="color: #4ade80;">ACTIVE_ONLINE</span>
+                                > INVESTORS: HAPPY<br>
+                                > STATUS: <span style="color: #4ade80;">READY_TO_GROW</span>
                             </div>
                         </div>
                     </div>
@@ -136,7 +142,6 @@
                     <h2 class="stat-number" data-target="150">0</h2>
                     <p>Successful Projects</p>
                 </div>
-        
         
 
                 <div class="stat-item">
@@ -171,11 +176,12 @@
                 </div>
             </div>
         </section>
-        <div class="services-grid">
+
+        <div class="services-grid" id="main-services">
             <div class="service-card">
                 <div style="font-size: 0.75rem; color: #38bdf8; margin-bottom: 10px; font-weight: bold;">01 / WEBSITES</div>
                 <h3>Making Websites</h3>
-                <p>We make all kinds of websites. From simple landing pages to big online shops where you can sell things.</p>
+                <p>We make all kinds of websites. From simple landing pages to big online shops where businesses sell things and make money.</p>
                 <ul style="text-align: left; font-size: 0.85rem; color: #94a3b8; padding-left: 20px; margin-top: 15px;">
                     <li style="margin-bottom: 8px;">Online stores (E-commerce)</li>
                     <li style="margin-bottom: 8px;">Personal blogs and portfolios</li>
@@ -186,7 +192,7 @@
             <div class="service-card">
                 <div style="font-size: 0.75rem; color: #38bdf8; margin-bottom: 10px; font-weight: bold;">02 / SERVERS</div>
                 <h3>Cloud & Support</h3>
-                <p>If you have a website but it’s slow or crashes, we can fix it. We put your site on fast and safe servers.</p>
+                <p>We keep businesses running. We put client sites on fast and safe servers, so they never lose their customers or money.</p>
                 <ul style="text-align: left; font-size: 0.85rem; color: #94a3b8; padding-left: 20px; margin-top: 15px;">
                     <li style="margin-bottom: 8px;">Setting up fast servers</li>
                     <li style="margin-bottom: 8px;">Fixing bugs and errors</li>
@@ -197,37 +203,79 @@
             <div class="service-card">
                 <div style="font-size: 0.75rem; color: #38bdf8; margin-bottom: 10px; font-weight: bold;">03 / HELP</div>
                 <h3>Consulting</h3>
-                <p>Don't know what you need? We can talk and find the best solution for your budget and your goals.</p>
+                <p>We help businesses find the best solutions for their budget. We give advice on how to improve and grow faster.</p>
                 <ul style="text-align: left; font-size: 0.85rem; color: #94a3b8; padding-left: 20px; margin-top: 15px;">
                     <li style="margin-bottom: 8px;">Help with ideas</li>
                     <li style="margin-bottom: 8px;">Security checks</li>
-                    <li style="margin-bottom: 8px;">Improving your old site</li>
+                    <li style="margin-bottom: 8px;">Improving old sites</li>
                 </ul>
             </div>
         </div>
 
-        <section id="team">
-            <h2>Our Team</h2>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-avatar-rect">
-                        <img src="colega1.jpg" alt="Egor" onerror="this.src='https://via.placeholder.com/240x300/1e293b/38bdf8?text=Egor'">
-                    </div>
-                    <h3>Egor</h3>
-                    <span class="role">Lead Developer</span>
-                    <p class="team-desc">Systems architect and data security expert.</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar-rect">
-                        <img src="colega2.jpg" alt="Yarema" onerror="this.src='https://via.placeholder.com/240x300/1e293b/38bdf8?text=Yarema'">
-                    </div>
-                    <h3>Yarema</h3>
-                    <span class="role">UI/UX Designer</span>
-                    <p class="team-desc">Creates intuitive interfaces that are clear to everyone.</p>
+       <section id="why-us">
+    <h2>Why Invest in TechForge?</h2>
+    
+    <div class="investor-panel">
+        <div class="investor-list">
+            
+            <div class="investor-item">
+                <div class="item-number">01</div>
+                <div class="item-content">
+                    <h3>Fast Development & High Quality</h3>
+                    <p>In the modern digital world, time is the most valuable resource. Our team uses agile technologies to build professional websites and applications much faster than big, slow agencies. We guarantee that every project meets high-quality standards, which helps businesses start making money almost immediately.</p>
                 </div>
             </div>
-        </section>
+
+            <div class="investor-item">
+                <div class="item-number">02</div>
+                <div class="item-content">
+                    <h3>Modern Tech Stack</h3>
+                    <p>We don't use old methods. Our studio works with the latest programming languages and cloud servers. This means the websites we create are very fast, secure, and ready for thousands of visitors. For an investor, this means a reliable product that won't break when the business grows.</p>
+                </div>
+            </div>
+
+            <div class="investor-item">
+                <div class="item-number">03</div>
+                <div class="item-content">
+                    <h3>Global Market Potential</h3>
+                    <p>IT is a business without borders. We are based in Ukraine, but we can work with clients from Europe, the USA, and Asia. Our low operational costs and high level of expertise allow us to offer competitive prices globally, ensuring a stable and growing profit for our partners.</p>
+                </div>
+            </div>
+
+            <div class="investor-item">
+                <div class="item-number">04</div>
+                <div class="item-content">
+                    <h3>Professional & Motivated Team</h3>
+                    <p>Our team consists of young but experienced developers and designers who love what they do. We focus on effective communication with our clients to understand their business goals. We don't just sell code; we build digital tools that solve real problems and generate real income.</p>
+                </div>
+            </div>
+
+        </div>
     </div>
+</section>
+
+        <section id="team">
+    <h2>Our Team</h2>
+    <div class="team-grid">
+        <div class="team-card" id="team-egor">
+            <div class="team-avatar-rect">
+                <img src="colega1.jpg" alt="Egor" class="main-img" onerror="this.src='https://via.placeholder.com/240x300/1e293b/38bdf8?text=Egor'">
+            </div>
+            <h3>Egor</h3>
+            <span class="role">Lead Developer & Co-Founder</span>
+            <p class="team-desc">Systems architect and data security expert. Keeps the business running.</p>
+        </div>
+
+        <div class="team-card" id="team-yarema">
+            <div class="team-avatar-rect">
+                <img src="colega2.jpg" alt="Yarema" class="main-img" onerror="this.src='https://via.placeholder.com/240x300/1e293b/38bdf8?text=Yarema'">
+            </div>
+            <h3>Yarema</h3>
+            <span class="role">UI/UX Designer & Co-Founder</span>
+            <p class="team-desc">Creates modern designs that attract clients and make them stay.</p>
+        </div>
+    </div>
+</section>
 
     <footer id="contact">
         <div class="footer-content">
@@ -243,8 +291,9 @@
     </footer>
 
     <script>
+        // ... твой код генерации палочек ...
         const container = document.getElementById('sticks-container');
-        const totalEntities = 90;
+        const totalEntities = 160;
         for (let i = 0; i < totalEntities; i++) {
             const wrapper = document.createElement('div');
             wrapper.className = 'stick-wrapper';
@@ -299,7 +348,8 @@
             }, 1100);
         }
 
-        document.querySelectorAll('.service-card').forEach(card => {
+        // ВОТ ТУТ ПРАВКА: теперь клик работает ТОЛЬКО для карточек в #main-services
+        document.querySelectorAll('#main-services .service-card').forEach(card => {
             card.addEventListener('click', () => {
                 const title = card.querySelector('h3').innerText;
                 startServiceProcess(title);
@@ -310,22 +360,11 @@
         window.onclick = (e) => { if(e.target == modal) modal.style.display = 'none'; };
 
         phoneInput.oninput = function() {
-    // 1. Убираем всё, кроме цифр
-    let value = this.value.replace(/[^\d]/g, '');
-
-    // 2. Если пользователь попытался удалить "380", возвращаем его
-    if (!value.startsWith('380')) {
-        value = '380' + value.replace('380', '');
-    }
-
-    // 3. Ограничиваем длину (например, 12 цифр всего: 380 + 9 цифр номера)
-    if (value.length > 12) {
-        value = value.slice(0, 12);
-    }
-
-    // 4. Добавляем "+" в начало и записываем обратно в поле
-    this.value = '+' + value;
-};
+            let value = this.value.replace(/[^\d]/g, '');
+            if (!value.startsWith('380')) { value = '380' + value.replace('380', ''); }
+            if (value.length > 12) { value = value.slice(0, 12); }
+            this.value = '+' + value;
+        };
 
         function sendOrder() {
             const phoneValue = phoneInput.value;
@@ -354,17 +393,15 @@
 
         function closeAfterAll() { modal.style.display = 'none'; }
         
-        // Stats animation
+        // ... анимации статистики и reveal ...
         const stats = document.querySelectorAll('.stat-number');
         const speed = 200;
-
         const animateStats = () => {
             stats.forEach(counter => {
                 const updateCount = () => {
                     const target = +counter.getAttribute('data-target');
                     const count = +counter.innerText;
                     const inc = target / speed;
-
                     if (count < target) {
                         counter.innerText = Math.ceil(count + inc);
                         setTimeout(updateCount, 1);
@@ -376,14 +413,12 @@
             });
         };
 
-        // Trigger animation on scroll
         const observer = new IntersectionObserver((entries) => {
             if(entries[0].isIntersecting) {
                 animateStats();
-                observer.disconnect(); // Run once
+                observer.disconnect();
             }
         }, { threshold: 0.5 });
-
         observer.observe(document.querySelector('.stats-section'));
 
         function reveal() {
@@ -392,15 +427,43 @@
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
                 var elementVisible = 150; 
-                
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add("active");
                 }
             }
         }
-
         window.addEventListener("scroll", reveal);
         reveal();
+function setupTeamEasterEgg(cardId, img1, img2, img3) {
+    const card = document.getElementById(cardId);
+    const img = card.querySelector('.main-img');
+    let secretTimer;
+
+    card.addEventListener('mouseenter', () => {
+        // 1. Сразу меняем на второе фото
+        img.src = img2;
+        
+        // 2. Запускаем таймер на 10 секунд для "секретки"
+        secretTimer = setTimeout(() => {
+            img.src = img3;
+            // Небольшой визуальный эффект, что секрет активирован
+            img.style.filter = "contrast(1.2) brightness(1.2)";
+        }, 10000);
+    });
+
+    card.addEventListener('mouseleave', () => {
+        // Сбрасываем всё, когда убрали мышку
+        clearTimeout(secretTimer);
+        img.src = img1;
+        img.style.filter = "none";
+    });
+}
+
+// Применяем для Егора: 1 -> 21 -> 11
+setupTeamEasterEgg('team-egor', 'colega1.jpg', 'colega21.jpg', 'colega11.jpg');
+
+// Применяем для Яремы: 2 -> 12 -> 22
+setupTeamEasterEgg('team-yarema', 'colega2.jpg', 'colega12.jpg', 'colega22.jpg');
     </script>
 </body>
 </html>

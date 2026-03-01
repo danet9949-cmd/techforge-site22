@@ -685,3 +685,158 @@ input:-webkit-autofill:focus {
     0% { transform: translateY(-100%); }
     100% { transform: translateY(100%); }
 }
+/* --- СТИЛЬ ДЛЯ БЛОКА ИНВЕСТОРА --- */
+
+/* --- СЕКЦИЯ ИНВЕСТОРА (УЛУЧШЕННАЯ ВЕРСИЯ) --- */
+
+/* --- СЕКЦИЯ ИНВЕСТОРА (ШИРОКАЯ И МЯГКАЯ ВЕРСИЯ) --- */
+
+#why-us {
+    padding: 100px 20px;
+}
+
+#why-us h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+.investor-panel {
+    background: rgba(30, 41, 59, 0.3); /* Очень прозрачный фон */
+    backdrop-filter: blur(12px);
+    border-radius: 30px;
+    padding: 60px;
+    max-width: 1360px; /* Сделали еще шире */
+    margin: 0 auto;
+    position: relative;
+    /* Почти убрали градиент: оставили очень тонкую, едва видимую линию */
+    border: 1px solid rgba(56, 189, 248, 0.15); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Мягкий эффект свечения вместо жесткой рамки */
+.investor-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    padding: 1px;
+    /* Едва заметный переход от голубого к прозрачному */
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), transparent 40%, rgba(56, 189, 248, 0.1));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* При наведении рамка становится чуть отчетливее, но всё еще мягко */
+.investor-panel:hover {
+    transform: translateY(-5px);
+    background: rgba(30, 41, 59, 0.4);
+    border-color: rgba(56, 189, 248, 0.4);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.1);
+}
+
+.investor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.investor-item {
+    display: grid;
+    grid-template-columns: 60px 1fr; /* Чуть увеличили отступ номера */
+    gap: 10px;
+    align-items: start;
+}
+
+.item-number {
+    font-family: 'Courier New', monospace;
+    font-size: 1.6rem;
+    color: #38bdf8;
+    font-weight: bold;
+    opacity: 0.6; /* Сделали цифры бледнее, чтобы не кричали */
+}
+
+.item-content h3 {
+    font-size: 1.6rem;
+    color: #fff;
+    margin: 0 0 12px 0;
+    font-weight: 600;
+}
+
+.item-content p {
+    color: #94a3b8; /* Мягкий серый цвет */
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+/* Адаптив */
+@media (max-width: 1000px) {
+    .investor-panel { max-width: 90%; padding: 40px; }
+}
+
+@media (max-width: 768px) {
+    .investor-item { grid-template-columns: 1fr; }
+    .item-number { font-size: 1.2rem; }
+}
+/* Базовая настройка для контейнера фото */
+.team-avatar-rect {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #1e293b;
+}
+
+.team-avatar-rect img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+/* Эффект при наведении на карточку (сразу) */
+.team-card:hover .team-avatar-rect img {
+    transform: scale(1.05);
+}
+
+/* Логика для Егора (colega1 -> colega21) */
+.team-card:first-child .team-avatar-rect::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('colega21.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.team-card:first-child:hover .team-avatar-rect::after {
+    opacity: 1;
+}
+
+/* Логика для Яремы (colega2 -> colega12) */
+.team-card:last-child .team-avatar-rect::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('colega12.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.team-card:last-child:hover .team-avatar-rect::after {
+    opacity: 1;
+}
